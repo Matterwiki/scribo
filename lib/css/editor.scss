@@ -1,12 +1,13 @@
 @import "editorToolbar";
 @import "toolbarButton";
+@import "manageLinkPopup";
 
 .scribo-editor-toolbar {
     margin: 0;
     margin-bottom: 1rem;
     padding: 20px 10px;
     box-sizing: content-box;
-    border-bottom: solid 1px #f4f4f4;
+    border-bottom: solid 2px #f4f4f4;
 }
 
 .scribo-editor-content {
@@ -18,4 +19,18 @@
 
 .strikethrough-mark {
     text-decoration: line-through;
+}
+
+.tooltip-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.align-horizontal {
+    display: inline-block;
+    text-align: center;
 }
