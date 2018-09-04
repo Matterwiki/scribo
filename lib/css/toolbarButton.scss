@@ -19,6 +19,10 @@
     margin: 0.2em;
     max-width: 20px;
 
+    &:focus {
+        outline: 0;
+    }
+
     & .ql-stroke {
         fill: transparent;
         stroke: #000;

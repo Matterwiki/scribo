@@ -22,7 +22,8 @@
         "immutable": "^3.8.2",
         "slate": "^0.34.5",
         "slate-react": "^0.13.2",
-        "quill-icons": "^0.6.0"
+        "quill-icons": "^0.6.0",
+        "emoji-mart": "^2.8.1"
     },
     "author": "Nishant Arora (@nshntarora) & Krishna Gopinath (@krishwader)",
     "repository": {},
@@ -44,6 +45,7 @@
         "prettier": "^1.13.7"
     },
     "dependencies": {
+        "emoji-mart": "^2.8.1",
         "flexboxgrid": "^6.3.1",
         "immutable": "^3.8.2",
         "is-hotkey": "^0.1.3",
