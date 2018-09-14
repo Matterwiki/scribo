@@ -6,7 +6,8 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "prepare": "echo 'Installing peer dependencies..⌛' && install-self-peers --npm",
-        "start": "parcel example/index.html",
+        "start": "parcel example/index.html --no-cache",
+        "s": "npm start",
         "format": "prettier --write \"{lib,example}/**/*.{js,css}\"",
         "lint": "eslint \"{lib,example}/**/*.{js,css}\""
     },
@@ -33,6 +34,9 @@
         "babel-eslint": "^8.2.6",
         "babel-plugin-transform-class-properties": "^6.24.1",
         "babel-plugin-transform-object-rest-spread": "^6.26.0",
+        "babel-preset-env": "^1.7.0",
+        "babel-preset-react": "^6.24.1",
+        "babel-preset-stage-3": "^6.24.1",
         "eslint": "^4.19.1",
         "eslint-config-airbnb": "^17.0.0",
         "eslint-config-prettier": "^2.9.0",
@@ -42,9 +46,12 @@
         "eslint-plugin-react": "^7.10.0",
         "node-sass": "^4.9.2",
         "parcel-bundler": "^1.9.6",
+        "parcel-plugin-inlinesvg": "0.0.14",
         "prettier": "^1.13.7"
     },
     "dependencies": {
+        "boundless-popover": "^1.1.0",
+        "classnames": "^2.2.6",
         "emoji-mart": "^2.8.1",
         "flexboxgrid": "^6.3.1",
         "immutable": "^3.8.2",
@@ -52,9 +59,11 @@
         "prop-types": "^15.6.2",
         "quill-icons": "^0.6.0",
         "react": "^16.5.0",
+        "react-awesome-popover": "^3.0.0",
         "react-dom": "^16.5.0",
         "react-icons": "^3.0.5",
         "react-portal-tooltip": "^2.4.0",
+        "react-simple-popover": "^0.2.4",
         "slate": "^0.34.7",
         "slate-react": "^0.13.4"
     }
