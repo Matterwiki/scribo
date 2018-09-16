@@ -1,0 +1,33 @@
+.manage-link-popover {
+    display: flex;
+    align-items: center;
+    height: 32px;
+    padding: 4px 8px;
+
+    input {
+        box-sizing: content-box;
+        background-color: transparent;
+        color: #505f79;
+        line-height: 20px;
+        border-width: 0px;
+        border-radius: 0px;
+        padding: 0px;
+        height: 28px;
+        min-width: 244px;
+        margin-right: 2px;
+        outline: 0;
+
+        &.with-border-right {
+            border-right: 1px solid #d2dcec;
+        }
+    }
+
+    span {
+        font-size: 14px;
+    }
+
+    .validation-border-error {
+        border: solid 2px #e62e2e9d;
+        border-radius: 3px;
+    }
+}

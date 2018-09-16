@@ -1,0 +1,15 @@
+.emoji-mart {
+    border: none;
+
+    .emoji-mart-emoji {
+        cursor: pointer;
+
+        span {
+            cursor: pointer;
+        }
+    }
+
+    .emoji-mart-bar {
+        display: none;
+    }
+}

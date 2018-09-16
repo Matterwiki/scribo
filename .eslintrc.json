@@ -17,13 +17,16 @@
         "react/jsx-indent": "off",
         "react/jsx-one-expression-per-line": "off",
         "react/jsx-indent-props": "off",
-        "react/destructuring-assignment": "warn",
-        "react/prefer-stateless-function": "warn",
+        "react/destructuring-assignment": "off",
+        "react/prefer-stateless-function": "off",
+        "react/jsx-closing-bracket-location": "off",
         "class-methods-use-this": "off",
         "function-paren-newline": "off",
         "prefer-destructuring": "off",
         "camelcase": "off",
         "jsx-a11y/anchor-is-valid": "off",
+        "jsx-a11y/no-autofocus": "off",
+        "react/jsx-wrap-multilines": "off",
         "no-restricted-globals": "off",
         "prefer-promise-reject-errors": "off",
         "react/no-danger": "off",
@@ -33,6 +36,7 @@
         "global-require": "off",
         "no-return-assign": "off",
         "no-alert": "off",
-        "no-param-reassign": "off"
+        "no-param-reassign": "off",
+        "default-case": "off"
     }
 }

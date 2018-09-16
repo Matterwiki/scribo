@@ -3,7 +3,7 @@ import { render } from "react-dom";
 
 import Editor from "../lib/index";
 
-import "../lib/css/editor.scss";
+import "../lib/css/index.scss";
 import "./index.css";
 
 const RichTextEditorExample = () => (
