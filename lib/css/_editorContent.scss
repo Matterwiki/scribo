@@ -5,13 +5,18 @@
     padding-left: 10px;
 
     .editor-placeholder {
-        float: left; // https://github.com/ianstormtaylor/slate/issues/1436
+        // To prevent cursor jumping, see: https://github.com/ianstormtaylor/slate/issues/1436
+        float: left;
         pointer-events: none;
         display: inline-block;
         width: 0px;
         max-width: 100%;
         white-space: nowrap;
         opacity: 0.333;
+    }
+
+    .editor-paragraph-node {
+        margin: 12px 0 0 0;
     }
 
     .editor-strikethrough-node {
@@ -24,5 +29,14 @@
         font-size: 85%;
         background-color: #e7e7e7;
         border-radius: 3px;
+    }
+
+    .editor-blockquote-node {
+        box-sizing: border-box;
+        border-left: 3px solid #e7e7e7;
+        margin: 12px 0px 0px;
+        font-style: italic;
+        color: #707070;
+        padding: 10px 15px;
     }
 }
