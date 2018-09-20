@@ -67,6 +67,8 @@
         "react-simple-popover": "^0.2.4",
         "react-tiny-popover": "^3.4.2",
         "slate": "^0.34.7",
-        "slate-react": "^0.13.4"
+        "slate-react": "^0.13.4",
+        "slate-soft-break": "^0.8.1",
+        "slate-trailing-block": "^0.5.0"
     }
 }
