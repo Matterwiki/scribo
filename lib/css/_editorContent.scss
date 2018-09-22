@@ -3,40 +3,47 @@
     min-height: 500px;
     font-size: 18px;
     padding-left: 10px;
+    display: flex;
 
-    .editor-placeholder {
-        // To prevent cursor jumping, see: https://github.com/ianstormtaylor/slate/issues/1436
-        float: left;
-        pointer-events: none;
-        display: inline-block;
-        width: 0px;
-        max-width: 100%;
-        white-space: nowrap;
-        opacity: 0.333;
-    }
+    div[data-slate-editor] {
+        justify-content: center;
+        align-items: center;
+        width: 100%;
 
-    .editor-paragraph-node {
-        margin: 12px 0 0 0;
-    }
+        .editor-placeholder {
+            // To prevent cursor jumping, see: https://github.com/ianstormtaylor/slate/issues/1436
+            float: left;
+            pointer-events: none;
+            display: inline-block;
+            width: 0px;
+            max-width: 100%;
+            white-space: nowrap;
+            opacity: 0.333;
+        }
 
-    .editor-strikethrough-node {
-        text-decoration: line-through;
-    }
+        .editor-paragraph-node {
+            margin: 12px 0 0 0;
+        }
 
-    .editor-code-node {
-        padding: 0.2em 0.4em;
-        margin: 0;
-        font-size: 85%;
-        background-color: #e7e7e7;
-        border-radius: 3px;
-    }
+        .editor-strikethrough-node {
+            text-decoration: line-through;
+        }
 
-    .editor-blockquote-node {
-        box-sizing: border-box;
-        border-left: 3px solid #e7e7e7;
-        margin: 12px 0px 0px;
-        font-style: italic;
-        color: #707070;
-        padding: 10px 15px;
+        .editor-code-node {
+            padding: 0.2em 0.4em;
+            margin: 0;
+            font-size: 85%;
+            background-color: #e7e7e7;
+            border-radius: 3px;
+        }
+
+        .editor-blockquote-node {
+            box-sizing: border-box;
+            border-left: 3px solid #e7e7e7;
+            margin: 12px 0px 0px;
+            font-style: italic;
+            color: #707070;
+            padding: 10px 15px;
+        }
     }
 }
