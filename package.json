@@ -23,7 +23,6 @@
         "immutable": "^3.8.2",
         "slate": "^0.34.5",
         "slate-react": "^0.13.2",
-        "quill-icons": "^0.6.0",
         "emoji-mart": "^2.8.1"
     },
     "author": "Nishant Arora (@nshntarora) & Krishna Gopinath (@krishwader)",
@@ -59,7 +58,6 @@
         "immutable": "^3.8.2",
         "is-hotkey": "^0.1.3",
         "prop-types": "^15.6.2",
-        "quill-icons": "^0.6.0",
         "react": "^16.5.2",
         "react-awesome-popover": "^3.0.0",
         "react-dom": "^16.5.2",
