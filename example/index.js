@@ -2,8 +2,6 @@ import React from "react";
 import { render } from "react-dom";
 
 import Editor from "../lib/index";
-
-import "../lib/css/index.scss";
 import "./index.css";
 
 const RichTextEditorExample = () => (

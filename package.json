@@ -32,6 +32,7 @@
     "devDependencies": {
         "@team-griffin/install-self-peers": "^1.1.1",
         "babel-eslint": "^8.2.6",
+        "babel-plugin-styled-components": "^1.7.1",
         "babel-plugin-transform-class-properties": "^6.24.1",
         "babel-plugin-transform-object-rest-spread": "^6.26.0",
         "babel-preset-env": "^1.7.0",
@@ -69,6 +70,7 @@
         "slate": "^0.34.7",
         "slate-react": "^0.13.4",
         "slate-soft-break": "^0.8.1",
-        "slate-trailing-block": "^0.5.0"
+        "slate-trailing-block": "^0.5.0",
+        "styled-components": "^3.4.9"
     }
 }
