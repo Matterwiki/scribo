@@ -37,6 +37,7 @@
         "no-return-assign": "off",
         "no-alert": "off",
         "no-param-reassign": "off",
-        "default-case": "off"
+        "default-case": "off",
+        "import/prefer-default-export": "off"
     }
 }
