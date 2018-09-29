@@ -6,7 +6,7 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "prepare": "echo 'Installing peer dependencies..⌛' && install-self-peers --npm",
-        "start": "parcel example/index.html --no-cache",
+        "start": "parcel example/index.html --no-cache --no-autoinstall",
         "s": "npm start",
         "format": "prettier --write \"{lib,example}/**/*.{js,css}\"",
         "lint": "eslint \"{lib,example}/**/*.{js,css}\""
