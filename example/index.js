@@ -4,9 +4,31 @@ import { render } from "react-dom";
 import Editor from "../lib/index";
 import "./index.css";
 
+function uploadFileHandler(file) {
+    console.log("selected file:", file);
+
+    return new Promise((resolve, reject) => {
+        var reader = new FileReader();
+
+        reader.addEventListener("error", (e) => reject(e), false);
+        reader.addEventListener("load", () => resolve(reader.result), false);
+
+        // Timeout to simulate delay
+        setTimeout(() => {
+            if (file) reader.readAsDataURL(file);
+        }, 1000);
+    });
+}
+
+const Loading = () => <div>Loading...</div>;
+
 const RichTextEditorExample = () => (
     <div className="container">
-        <Editor placeholder="Start typing..." dialogPortal="dialog-portal" />
+        <Editor
+            placeholder="Start typing..."
+            uploadFileHandler={uploadFileHandler}
+            uploadLoadingComponent={Loading}
+        />
     </div>
 );
 
