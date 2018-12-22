@@ -1,14 +1,14 @@
 import React from "react";
 import { render } from "react-dom";
 
-import Editor from "../lib/index";
+import { WYSIWYGEditor, MarkdownEditor } from "../lib/index";
 import "./index.css";
 
 function uploadFileHandler(file) {
-    console.log("selected file:", file);
+    console.log("File to upload:", file);
 
     return new Promise((resolve, reject) => {
-        var reader = new FileReader();
+        const reader = new FileReader();
 
         reader.addEventListener("error", (e) => reject(e), false);
         reader.addEventListener("load", () => resolve(reader.result), false);
@@ -20,16 +20,32 @@ function uploadFileHandler(file) {
     });
 }
 
-const Loading = () => <div>Loading...</div>;
+const Loading = () => <div>Uploading...</div>;
 
 const RichTextEditorExample = () => (
-    <div className="container">
-        <Editor
-            placeholder="Start typing..."
-            uploadFileHandler={uploadFileHandler}
-            uploadLoadingComponent={Loading}
-        />
-    </div>
+    <React.Fragment>
+        <h2>
+            <code>MarkdownEditor</code> component
+        </h2>
+        <div className="container">
+            <MarkdownEditor
+                placeholder="Start typing..."
+                uploadFileHandler={uploadFileHandler}
+                uploadLoadingComponent={Loading}
+            />
+        </div>
+
+        <h2>
+            <code>WYSIWYGEditor</code> component
+        </h2>
+        <div className="container">
+            <WYSIWYGEditor
+                placeholder="Start typing..."
+                uploadFileHandler={uploadFileHandler}
+                uploadLoadingComponent={Loading}
+            />
+        </div>
+    </React.Fragment>
 );
 
 render(<RichTextEditorExample />, document.getElementById("root"));
