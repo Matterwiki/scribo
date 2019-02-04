@@ -20,7 +20,14 @@ function uploadFileHandler(file) {
     });
 }
 
-const Loading = () => <div>Uploading...</div>;
+const Loading = ({ alt }) => <div>Uploading {alt}...</div>;
+const Error = ({ alt }) => <div>Error uploading {alt}...</div>;
+
+const imageUploadOptions = {
+    Loading,
+    Error,
+    uploadFileHandler
+};
 
 const RichTextEditorExample = () => (
     <React.Fragment>
@@ -28,22 +35,14 @@ const RichTextEditorExample = () => (
             <code>MarkdownEditor</code> component
         </h2>
         <div className="container">
-            <MarkdownEditor
-                placeholder="Start typing..."
-                uploadFileHandler={uploadFileHandler}
-                uploadLoadingComponent={Loading}
-            />
+            <MarkdownEditor placeholder="Start typing..." imageUploadOptions={imageUploadOptions} />
         </div>
 
         <h2>
             <code>WYSIWYGEditor</code> component
         </h2>
         <div className="container">
-            <WYSIWYGEditor
-                placeholder="Start typing..."
-                uploadFileHandler={uploadFileHandler}
-                uploadLoadingComponent={Loading}
-            />
+            <WYSIWYGEditor placeholder="Start typing..." imageUploadOptions={imageUploadOptions} />
         </div>
     </React.Fragment>
 );
