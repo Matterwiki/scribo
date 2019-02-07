@@ -1,7 +1,7 @@
 import React from "react";
 import { render } from "react-dom";
 
-import { WYSIWYGEditor, MarkdownEditor } from "../lib/index";
+import { WYSIWYGEditor } from "../../lib/index";
 import "./index.css";
 
 function uploadFileHandler(file) {
@@ -31,13 +31,6 @@ const imageUploadOptions = {
 
 const RichTextEditorExample = () => (
     <React.Fragment>
-        <h2>
-            <code>MarkdownEditor</code> component
-        </h2>
-        <div className="container">
-            <MarkdownEditor placeholder="Start typing..." imageUploadOptions={imageUploadOptions} />
-        </div>
-
         <h2>
             <code>WYSIWYGEditor</code> component
         </h2>

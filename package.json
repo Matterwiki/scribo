@@ -4,10 +4,10 @@
     "description": "The editor developed for Matterwiki.",
     "main": "index.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
         "prepare": "echo 'Installing peer dependencies..⌛' && install-self-peers --npm -- --no-save",
-        "start": "parcel example/index.html --no-cache --no-autoinstall",
-        "s": "npm start",
+        "start": "echo 'Running md editor example...\n' && npm run example:md",
+        "example:md": "parcel examples/md/index.html --no-cache --no-autoinstall",
+        "example:wysiwyg": "parcel examples/wysiwyg/index.html --no-cache --no-autoinstall",
         "format": "prettier --write \"{lib,example}/**/*.{js,css}\"",
         "lint": "eslint \"{lib,example}/**/*.{js,css}\""
     },
