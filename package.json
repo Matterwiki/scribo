@@ -5,9 +5,9 @@
     "main": "index.js",
     "scripts": {
         "prepare": "echo 'Installing peer dependencies..⌛' && install-self-peers --npm -- --no-save",
-        "start": "echo 'Running md editor example...\n' && npm run example:md",
-        "example:md": "parcel examples/md/index.html --no-cache --no-autoinstall",
-        "example:wysiwyg": "parcel examples/wysiwyg/index.html --no-cache --no-autoinstall",
+        "start": "ntl",
+        "example:md": "echo '🏃 Running md-editor example...' && parcel examples/md/index.html --no-cache --no-autoinstall",
+        "example:wysiwyg": "echo '🏃 Running WYSIWYG editor example...' && parcel examples/wysiwyg/index.html --no-cache --no-autoinstall",
         "format": "prettier --write \"{lib,example}/**/*.{js,css}\"",
         "lint": "eslint \"{lib,example}/**/*.{js,css}\""
     },
@@ -42,6 +42,7 @@
         "eslint-plugin-prettier": "^2.6.2",
         "eslint-plugin-react": "^7.10.0",
         "node-sass": "^4.9.2",
+        "ntl": "^3.0.0",
         "parcel-bundler": "^1.10.1",
         "parcel-plugin-inlinesvg": "0.0.14",
         "prettier": "^1.13.7",
