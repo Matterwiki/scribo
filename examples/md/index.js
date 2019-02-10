@@ -25,7 +25,7 @@ function uploadFileHandler(file) {
 const Loading = ({ alt }) => <div>Uploading {alt}...</div>;
 const Error = ({ alt }) => <div>Error uploading {alt}...</div>;
 
-class RichTextEditorExample extends React.Component {
+class MdEditorExample extends React.Component {
     state = {
         readOnly: false,
         showPrintSink: false,
@@ -91,7 +91,7 @@ class RichTextEditorExample extends React.Component {
     }
 }
 
-render(<RichTextEditorExample />, document.getElementById("root"));
+render(<MdEditorExample />, document.getElementById("root"));
 
 // // TODO Make HMR work!
 // if (module.hot) {

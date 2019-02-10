@@ -4,6 +4,8 @@ import { render } from "react-dom";
 import { WYSIWYGEditor } from "../../lib/index";
 import "./index.css";
 
+import { emptyValue, randomValue } from "./sample";
+
 function uploadFileHandler(file) {
     console.log("File to upload:", file);
 
@@ -23,22 +25,71 @@ function uploadFileHandler(file) {
 const Loading = ({ alt }) => <div>Uploading {alt}...</div>;
 const Error = ({ alt }) => <div>Error uploading {alt}...</div>;
 
-const imageUploadOptions = {
-    Loading,
-    Error,
-    uploadFileHandler
-};
+class RichTextEditorExample extends React.Component {
+    state = {
+        readOnly: false,
+        showPrintSink: false,
+        value: randomValue
+    };
 
-const RichTextEditorExample = () => (
-    <React.Fragment>
-        <h2>
-            <code>WYSIWYGEditor</code> component
-        </h2>
-        <div className="container">
-            <WYSIWYGEditor placeholder="Start typing..." imageUploadOptions={imageUploadOptions} />
-        </div>
-    </React.Fragment>
-);
+    toggleReadOnly = () => {
+        this.setState((prevState) => ({
+            readOnly: !prevState.readOnly
+        }));
+    };
+
+    printScriboState = () => {
+        this.setState({
+            showPrintSink: true
+        });
+    };
+
+    handleValueChanged = (value) => {
+        this.setState({ value });
+    };
+
+    render() {
+        const imageUploadOptions = {
+            Loading,
+            Error,
+            uploadFileHandler
+        };
+
+        const { value, showPrintSink } = this.state;
+
+        return (
+            <React.Fragment>
+                <h2>
+                    <code>WYSIWYGEditor</code> component
+                </h2>
+                <div className="container">
+                    <WYSIWYGEditor
+                        readOnly={this.state.readOnly}
+                        value={value}
+                        onValueChanged={this.handleValueChanged}
+                        placeholder="Start typing..."
+                        imageUploadOptions={imageUploadOptions}
+                    />
+                </div>
+                <div>
+                    <input
+                        type="button"
+                        value="Toggle `readOnly` mode"
+                        onClick={this.toggleReadOnly}
+                    />
+                    <input type="button" value="Print value" onClick={this.printScriboState} />
+                </div>
+                {showPrintSink && (
+                    <div>
+                        <pre>
+                            <code>{JSON.stringify(value.toJSON(), null, 2)}</code>
+                        </pre>
+                    </div>
+                )}
+            </React.Fragment>
+        );
+    }
+}
 
 render(<RichTextEditorExample />, document.getElementById("root"));
 
