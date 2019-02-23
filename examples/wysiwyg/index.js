@@ -1,7 +1,7 @@
 import React from "react";
 import { render } from "react-dom";
 
-import { WYSIWYGEditor } from "../../lib/index";
+import { WYSIWYGEditor, fromJSON, toJSON } from "../../lib/wysiwyg/index";
 import "./index.css";
 
 import { emptyValue, randomValue } from "./sample";
@@ -29,7 +29,7 @@ class RichTextEditorExample extends React.Component {
     state = {
         readOnly: false,
         showPrintSink: false,
-        value: randomValue
+        value: fromJSON(randomValue)
     };
 
     toggleReadOnly = () => {
@@ -82,7 +82,7 @@ class RichTextEditorExample extends React.Component {
                 {showPrintSink && (
                     <div>
                         <pre>
-                            <code>{JSON.stringify(value.toJSON(), null, 2)}</code>
+                            <code>{JSON.stringify(toJSON(value), null, 2)}</code>
                         </pre>
                     </div>
                 )}
