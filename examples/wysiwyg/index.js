@@ -39,6 +39,7 @@ class RichTextEditorExample extends React.Component {
     };
 
     printScriboState = () => {
+        console.log(toJSON(this.state.value));
         this.setState({
             showPrintSink: true
         });
