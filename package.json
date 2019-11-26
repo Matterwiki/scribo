@@ -3,13 +3,39 @@
     "version": "1.0.0",
     "description": "The editor developed for Matterwiki.",
     "main": "index.js",
+    "browserslist": [
+        "defaults"
+    ],
+    "babel": {
+        "presets": [
+            "@babel/preset-env",
+            "@babel/preset-react"
+        ],
+        "plugins": [
+            "@babel/plugin-proposal-class-properties",
+            "babel-plugin-styled-components"
+        ]
+    },
+    "semistandard": {
+        "parser": "babel-eslint"
+    },
+    "engines": {
+        "npm": "please-use-yarn",
+        "yarn": "1.19.1",
+        "node": "12.13.1"
+    },
+    "lint-staged": {
+        "**/*": ["yarn lint:fix", "git add"]
+    },
     "scripts": {
-        "prepare": "echo 'Installing peer dependencies..⌛' && install-self-peers --npm -- --no-save",
+        "prepare": "yarn run install-peers",
+        "precommit": "lint-staged",
+        "install-peers": "install-peers",
         "start": "ntl",
-        "example:md": "echo '🏃 Running md-editor example...' && parcel examples/md/index.html --no-cache --no-autoinstall",
-        "example:wysiwyg": "echo '🏃 Running WYSIWYG editor example...' && parcel examples/wysiwyg/index.html --no-cache --no-autoinstall",
-        "format": "prettier --write \"{lib,example}/**/*.{js,css}\"",
-        "lint": "eslint \"{lib,example}/**/*.{js,css}\""
+        "example:md": "parcel examples/md/index.html --open --no-autoinstall --port 4000 --out-dir dist/md --cache-dir dist/md/.cache",
+        "example:wysiwyg": "parcel examples/wysiwyg/index.html --open --no-autoinstall --port 4001 --out-dir dist/wysiwyg --cache-dir dist/wysiwyg/.cache",
+        "lint": "semistandard --verbose | snazzy",
+        "lint:fix": "semistandard --verbose --fix | snazzy"
     },
     "keywords": [
         "matterwiki",
@@ -18,58 +44,43 @@
         "markdown"
     ],
     "peerDependencies": {
-        "react": "^16.6.x",
-        "react-dom": "^16.6.x"
+        "react": "^16.12.0",
+        "react-dom": "^16.12.0"
     },
     "author": "Nishant Arora (@nshntarora) & Krishna Gopinath (@krishwader)",
     "repository": {},
     "license": "ISC",
     "devDependencies": {
-        "@team-griffin/install-self-peers": "^1.1.1",
-        "babel-core": "^6.26.3",
-        "babel-eslint": "^8.2.6",
-        "babel-plugin-styled-components": "^1.7.1",
-        "babel-plugin-transform-class-properties": "^6.24.1",
-        "babel-plugin-transform-object-rest-spread": "^6.26.0",
-        "babel-preset-env": "^1.7.0",
-        "babel-preset-react": "^6.24.1",
-        "babel-preset-stage-3": "^6.24.1",
-        "eslint": "^4.19.1",
-        "eslint-config-airbnb": "^17.0.0",
-        "eslint-config-prettier": "^2.9.0",
-        "eslint-plugin-import": "^2.13.0",
-        "eslint-plugin-jsx-a11y": "^6.1.1",
-        "eslint-plugin-prettier": "^2.6.2",
-        "eslint-plugin-react": "^7.10.0",
-        "node-sass": "^4.9.2",
-        "ntl": "^3.0.0",
-        "parcel-bundler": "^1.10.1",
-        "parcel-plugin-inlinesvg": "0.0.14",
-        "prettier": "^1.13.7",
-        "styled-components": "^3.4.9"
+        "@babel/core": "^7.7.4",
+        "@babel/plugin-proposal-class-properties": "^7.7.4",
+        "@babel/plugin-proposal-object-rest-spread": "^7.7.4",
+        "@babel/preset-env": "^7.7.4",
+        "@babel/preset-react": "^7.7.4",
+        "babel-eslint": "^10.0.3",
+        "babel-plugin-styled-components": "^1.10.6",
+        "install-peers-cli": "^2.1.1",
+        "lint-staged": "^10.0.0-beta.4",
+        "modern-node": "^2.5.1",
+        "ntl": "^5.0.0",
+        "parcel-bundler": "^1.12.3",
+        "parcel-plugin-inlinesvg": "^0.1.1",
+        "sass": "^1.23.7",
+        "semistandard": "^14.2.0",
+        "snazzy": "^8.0.0",
+        "styled-components": "^4.4.1"
     },
     "dependencies": {
-        "boundless-popover": "^1.1.0",
-        "classnames": "^2.2.6",
-        "flexboxgrid": "^6.3.1",
         "immutable": "^4.0.0-rc.12",
-        "is-hotkey": "^0.1.3",
-        "lodash.clonedeep": "^4.5.0",
-        "lodash.invert": "^4.3.0",
-        "lodash.isboolean": "^3.0.3",
-        "lodash.isfunction": "^3.0.9",
-        "lodash.isundefined": "^3.0.1",
-        "prop-types": "^15.6.2",
-        "react-awesome-popover": "^3.0.0",
-        "react-icons": "^3.0.5",
-        "react-portal-tooltip": "^2.4.0",
-        "react-simple-popover": "^0.2.4",
-        "react-tiny-popover": "^3.4.2",
-        "slate": "^0.44.9",
-        "slate-deep-table": "^0.8.0",
-        "slate-md-serializer": "^5.2.3",
-        "slate-plain-serializer": "^0.6.33",
-        "slate-react": "^0.21.15",
+        "is-hotkey": "^0.1.6",
+        "lodash-es": "^4.17.15",
+        "prop-types": "^15.7.2",
+        "react-icons": "^3.8.0",
+        "react-tiny-popover": "^4.0.0",
+        "slate": "^0.47.9",
+        "slate-deep-table": "^0.9.6",
+        "slate-md-serializer": "^5.4.4",
+        "slate-plain-serializer": "^0.7.11",
+        "slate-react": "^0.22.10",
         "slate-trailing-block": "^0.5.0"
     }
 }
