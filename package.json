@@ -1,7 +1,7 @@
 {
     "name": "scribo",
     "version": "1.0.0",
-    "description": "The editor developed for Matterwiki.",
+    "description": "Drop-in MD and WYSIWYG editors with smart defaults, for React :sparkles:",
     "main": "index.js",
     "browserslist": [
         "defaults"
@@ -16,7 +16,7 @@
             "babel-plugin-styled-components"
         ]
     },
-    "semistandard": {
+    "standard": {
         "parser": "babel-eslint"
     },
     "engines": {
@@ -31,14 +31,13 @@
         ]
     },
     "scripts": {
-        "prepare": "yarn run install-peers",
-        "precommit": "lint-staged",
+        "clean": "rm -rf node_modules && rm yarn.lock && yarn install",
+        "example:wysiwyg": "parcel examples/wysiwyg/index.html --no-cache --no-autoinstall",
         "install-peers": "install-peers",
-        "start": "ntl",
-        "example:md": "cross-env PARCEL_AUTOINSTALL=false parcel examples/md/index.html --open --port 4000 --out-dir dist/md --cache-dir dist/md/.cache",
-        "example:wysiwyg": "cross-env PARCEL_AUTOINSTALL=false parcel examples/wysiwyg/index.html --open --port 4001 --out-dir dist/wysiwyg --cache-dir dist/wysiwyg/.cache",
-        "lint": "semistandard --verbose | snazzy",
-        "lint:fix": "semistandard --verbose --fix | snazzy"
+        "lint": "standard --verbose | snazzy",
+        "lint:fix": "standard --verbose --fix | snazzy",
+        "postinstall": "yarn run install-peers -f",
+        "precommit": "lint-staged"
     },
     "keywords": [
         "matterwiki",
@@ -56,7 +55,6 @@
     "devDependencies": {
         "@babel/core": "^7.7.4",
         "@babel/plugin-proposal-class-properties": "^7.7.4",
-        "@babel/plugin-proposal-object-rest-spread": "^7.7.4",
         "@babel/preset-env": "^7.7.4",
         "@babel/preset-react": "^7.7.4",
         "babel-eslint": "^10.0.3",
@@ -64,26 +62,15 @@
         "cross-env": "^6.0.3",
         "install-peers-cli": "^2.1.1",
         "lint-staged": "^10.0.0-beta.4",
-        "modern-node": "^2.5.1",
-        "ntl": "^5.0.0",
-        "parcel-bundler": "^1.12.3",
-        "parcel-plugin-inlinesvg": "^0.1.1",
-        "semistandard": "^14.2.0",
+        "parcel": "^2.0.0-alpha.3.2",
         "snazzy": "^8.0.0",
+        "standard": "^14.3.1",
         "styled-components": "^4.4.1"
     },
     "dependencies": {
-        "immutable": "^4.0.0-rc.12",
-        "is-hotkey": "^0.1.6",
-        "lodash-es": "^4.17.15",
         "prop-types": "^15.7.2",
         "react-icons": "^3.8.0",
-        "react-tiny-popover": "^4.0.0",
-        "slate": "^0.47.9",
-        "slate-deep-table": "^0.9.6",
-        "slate-md-serializer": "^5.4.4",
-        "slate-plain-serializer": "^0.7.11",
-        "slate-react": "^0.22.10",
-        "slate-trailing-block": "^0.5.0"
+        "slate": "^0.50.4",
+        "slate-react": "^0.50.5"
     }
 }
